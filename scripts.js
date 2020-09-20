@@ -29,6 +29,13 @@ function operate(calculate,a,b) {
     }
 }
 
+function splitAndOperate(){
+    afterSplit = collectInput.split(operator);
+    firstNumber=Number(afterSplit[0].toString());
+    secondNumber=Number(afterSplit[1].toString());
+    return operate(operator,firstNumber,secondNumber);
+}
+
 
 let displayItems = document.querySelector('.displayItems');
 
@@ -53,26 +60,41 @@ buttons.forEach(button => {
         }
 
         if(button.className=='operators') {
-            operator=button.id;
-            collectInput+=operator;
-            displayValue="";
-            operatorCounter++;
+            console.log(typeof Number(collectInput[collectInput.length-1]))
+            if(typeof Number(collectInput[collectInput.length-1])=="number"){
+                operatorCounter++;
+                if(operatorCounter==2) {
+                    total=splitAndOperate();
+                    displayItems.textContent=total;
+                    operatorCounter--;
+                    collectInput=total.toString();
+                    displayValue="";
+                }
+                operator=button.id;
+                collectInput+=operator;
+                displayValue="";
+            }
         }
-        afterSplit = collectInput.split(operator);
-        if(afterSplit[1]&&!afterSplit[2]) {
-            firstNumber=Number(afterSplit[0].toString());
-            secondNumber=Number(afterSplit[1].toString());
-            total=operate(operator,firstNumber,secondNumber);
+
+        if(button.id=='equals') {
+            if(typeof Number(collectInput[collectInput.length-1])=="number"){
+                total=splitAndOperate();
+                displayItems.textContent=total; 
+                collectInput=total.toString();
+                operatorCounter--;
+                
+            }   
+        }
+
+        if(button.id=='allclear'){
+            collectInput="";
+            operator="";
             operatorCounter=0;
+            displayValue="";
+            displayItems.textContent="";
         }
-        
-        console.log(operatorCounter,firstNumber,secondNumber,total);
+
+        console.log(operator,collectInput,afterSplit,total);
     })
 });
 
-
-//1.display input on the screen.
-    //show input until operator is pressed
-//2.operator should not be shown.
-//3.After operator is pressed next input should be shown.
-//4.Equals should return the answer.
