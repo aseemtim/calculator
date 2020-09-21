@@ -9,9 +9,8 @@
 
 #calculator{
     margin: 50px auto;
-    height:450px;
-    width: 350px;
-    background-color: rgb(240, 234, 234);
+    height:460px;
+    width: 358px;
     border: 3px solid black;
     border-radius: 5px;  
     background-color: black;
@@ -54,6 +53,7 @@
 }
 
 button {
+    margin: 1px;
     font-size: 25px;
     font-weight: bold;
     height: 69px;
@@ -74,6 +74,10 @@ button {
     background-color: rgb(255, 217, 0);
 }
 
+#dot{
+    background-color: rgba(153, 205, 50, 0.76);
+}
+
 #equals{
     background-color: rgb(255, 217, 0);
 }
@@ -83,8 +87,8 @@ button {
 }
 
 button:hover{
-    font-size: 40px;
-    border: 2px solid silver;
+    font-size: 43px;
+    border: 2px solid black;
 }
 
 button:active{
