@@ -197,10 +197,6 @@ buttons.forEach(button => {
             //percent button should evaluate the percent value of the number and return it to the collectInput
             getPercent();
         } 
-
-        
-        
-        console.log(operator,collectInput,afterSplit,checkPosition,total);
     })
 });
 
@@ -243,6 +239,5 @@ window.addEventListener('keydown', function(e){
         //percent button should evaluate the percent value of the number and return it to the collectInput
         getPercent();
     } 
-    console.log(operator,collectInput,afterSplit,checkPosition,total);
 })
 
