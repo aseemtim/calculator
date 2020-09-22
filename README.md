@@ -12,6 +12,6 @@ Keyboard support is added.
 
 Rest of the buttons use default numpad keys.
 
-Pressing Enter will input the button you have last selected with click event. 
+Pressing Enter key will input the button you have last selected with click event. 
 
 
