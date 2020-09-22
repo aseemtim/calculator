@@ -85,6 +85,16 @@ function getEquals(button){
     }   
 }
 
+function getDot(button){
+    if(displayValue.includes('.')){
+        return
+    }else{
+        displayValue+=button.textContent;
+        displayItems.textContent=displayValue;
+        collectInput+=button.textContent;
+    }
+}
+
 function clearAll(button){
     collectInput="";
     operator=null;
@@ -159,6 +169,10 @@ buttons.forEach(button => {
             //display input value and collect it in a string variable.
             getCollectInputAndDisplay(button);
         }
+
+        if(button.id=='dot'){
+            getDot(button);
+        }
         
         if(button.className=='operators') {
             //operators gives total if operatorCounter is more than 2
@@ -202,6 +216,10 @@ window.addEventListener('keydown', function(e){
         getCollectInputAndDisplay(key);
     }
     
+    if(key.id=='dot'){
+        getDot(key);
+    }
+
     if(key.className=='operators') {
         //operators gives total if operatorCounter is more than 2
         getOperator(key);
