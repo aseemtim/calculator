@@ -2,6 +2,8 @@ This calculator app is made with the use of javascript with DOM. Flex is used to
 
 Keyboard support is added.
 
+Link: https://aseemtim.github.io/calculator/
+
 "=" is the button for equals.
 
 "a" is for AC(all clear).
